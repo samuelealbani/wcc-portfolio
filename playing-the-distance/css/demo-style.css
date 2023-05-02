@@ -28,5 +28,32 @@ nav{
     height: auto;
 }
 
+li{
+    margin-bottom: 2%;
+}
+
+.sequenceImg,  figure{
+   /*  margin: auto;
+    width:100%;
+    max-width:500px;
+    height: auto; */
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    max-width:500px;
+    width: 100%;
+}
+
+figure {
+    margin-bottom: 30px;
+}
+
+/* #sequence-image{
+    display: flex;
+    justify-content: center;
+} */
+
 
 /* you could add some media queries to make the video size look good on all screen sizes*/

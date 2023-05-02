@@ -22,56 +22,71 @@
         <a href="../">Back to Home</a>
     </nav>
     <header>
+
+    </header>
+
+    <main>
+        <img id="coverImg" src="images/playing-the-distance_cover.png">
         <h1>Playing the distance: a Physical Sound Synthesis Choreography </h1>
         <h4>A performative sound art installation of Physical Additive Synthesis</h4>
         <h2>Introduction</h2>
-        <p>“Playing the distance” is a performative and interactive sound art installation to be collaboratively played.
+        <p>
+            “Playing the distance” is a performative and interactive sound art installation to be collaboratively
+            played.
             Scanning a QR code projected on the wall of an exhibition room, the audience can run a software on the
             personal devices that activates a physical process of additive sound system.
         </p>
-        <p>Every participant adds a “voice” in the sonic spectrum of the room that varies both physically and virtually
+        <p>
+            Every participant adds a “voice” in the sonic spectrum of the room that varies both physically and virtually
             by moving in the space. The distance between people is detected by the personal devices and it is used as a
             parameter to control a machine learning model that defines the soundscape diffused in the room.
         </p>
-        <p> The projections on the walls “mirror” a graphic representation of the soundwave detected by every single
+        <p>
+            The projections on the walls “mirror” a graphic representation of the soundwave detected by every single
             phone. When all the voices are activated, a continuous line of all the harmonics surrounds the audience
             (Fig. 3). The output of the interaction is a synesthetic embodied experience where each participant both
             receives and creates a personal and unique sound experience based on their movements in the space.
         </p>
-        <p> The installation will also include an improvised choreography element, allowing participants to explore and
+        <p>
+            The installation will also include an improvised choreography element, allowing participants to explore and
             express themselves in a free-flowing manner. Overall, this project aims to provide an interactive and
             immersive experience that engages participants in a creative and collaborative process of physical additive
             synthesis.
         </p>
+
+
         <h2>Concept and Background Research</h2>
-        <p>The project is informed by the theory of Situated Knowledge (Haraway, 1988) remarking the denial of the
-            idea of the existence of an objective point of view. Equally, listening is always a situated experience
-            constituting an active exploration that is influenced by the movement of the body. This turns the body
-            into both an instrument and a sensor, shaping and defining the experience of sound (Voegelin, 2010).
-            Perceiving is a way of acting, by active inquiry and exploration (Noë, 2006). Therefore, embodiment is
-            not just a physical attribute but rather a state of engagement and participation (Dourish, 2001).
+        <p>The project is informed by the theory of Situated Knowledge (Haraway, 1988) remarking the denial of the idea
+            of the existence of an objective point of view. Equally, listening is always a situated experience
+            constituting an active exploration that is influenced by the movement of the body. This turns the body into
+            both an instrument and a sensor, shaping and defining the experience of sound (Voegelin, 2010). Perceiving
+            is a way of acting, by active inquiry and exploration (Noë, 2006). Therefore, embodiment is not just a
+            physical attribute but rather a state of engagement and participation (Dourish, 2001).
         </p>
         <p>The project backs on the idea of using computation to explore new relations between the physical and the
-            virtual space through the body of participant users. In spite of simulating sounds and visuals, this
-            project organises a system of sound synthesis that relies on the physical properties of sound. Also, the
-            design of interaction invites a participation of users that produces an improvised bodily choreography
-            and a situated sound experience.
+            virtual space through the body of participant users. In spite of simulating sounds and visuals, this project
+            organises a system of sound synthesis that relies on the physical properties of sound. Also, the design of
+            interaction invites a participation of users that produces an improvised bodily choreography and a situated
+            sound experience.
         </p>
         <p>In particular, it uses the additive synthesis theory to materially modifies the sound spectrum in the
-            physical space. Additive synthesis is a sound design technique that uses the superposition of several
-            single frequencies to create a complex timbre (Puckette, 2007, p. 10). Equally, the system of software
-            that controls this installation, orchestrates the users’ devices as a collection of sound sources that
-            emit specific frequencies, together creating a complex sound.
+            physical space. Additive synthesis is a sound design technique that uses the superposition of several single
+            frequencies to create a complex timbre (Puckette, 2007, p. 10). Equally, the system of software that
+            controls this installation, orchestrates the users’ devices as a collection of sound sources that emit
+            specific frequencies, together creating a complex sound.
         </p>
         <p>
             Finally, this setup inspired me to ideate an experimental way to measure proximity between devices. The
-            evaluation of the distance between phones (for example) is a challenging task, usually achieved with
-            complex commercial systems based on triangulations using Bluetooth technology or Wi-Fi such as Bluetooth
-            Beacon . Nevertheless, considering that the server ‘knows’ the frequencies played by every active client
-            and that sinusoidal frequencies are particularly precise, I believe that it is possible to use the
-            measures of the volume of those specific frequencies, to detect the presence and the proximity of the
-            other users.
+            evaluation of the distance between phones is a challenging task, usually achieved with complex commercial
+            systems based on triangulations using Bluetooth technology or Wi-Fi, such as
+            <a
+                href="https://www.mokosmart.com/bluetooth-beacons/?gclid=CjwKCAjwxr2iBhBJEiwAdXECw_DOT1PJeugEEclwsAvG1xMHuAAKoQ-kNbIhFfwlyhhHObazioUGqRoCZZQQAvD_BwE">
+                Bluetooth Beacon</a>.
+            Nevertheless, considering that in my case the server ‘knows’ the frequencies played by every active client
+            and that sinusoidal frequencies are particularly precise, I believe that it is possible to use the measures
+            of the volume of those specific frequencies, to detect the presence and the proximity of the other users.
         </p>
+
         <p>The design and timeline of the interaction system:</p>
         <ol>
             <li>
@@ -85,6 +100,7 @@
             <li>
                 The user activates the sound’s system of the phone by pressing a button on the screen.
             </li>
+
             <li>
                 As soon as the web-socket connection is established and the stream of data is started, the QR code
                 projected on the wall disappears and the projection starts to display the wavelength of the sound
@@ -92,7 +108,7 @@
                 instrument consisting of a sinusoidal oscillator (Farnell, 2010) that emits a specific frequency of
                 a predefined spectrum (sent by the server as an array and assigned according to the QR code
                 scanned). At the same time, the app uses the microphone of the device to analyse the sound detected
-                with the fast Fourier transform (FFT) algorithm.<br>
+                with the fast Fourier transform (FFT) algorithm.<br><br>
                 FFT computes a decomposition of the sound spectrum detected into a sequence of values of different
                 frequencies (Puckette, 2007, Chapter 9). The app uses this technique for two reasons. On the one hand,
                 it uses the values of the spectrum to draw the wavelength of the sound detected. A reduced amount of
@@ -102,74 +118,120 @@
                 values of the background colour is defined by the levels of the proximity of the other users. By moving
                 in space, the values always create different combinations of colours.
             </li>
-            <li>Every client sends through web-socket in OSC format the values of the other frequencies that the
-                server redirects through the bridge.js program as UDP message to the Max/MSP patch.
-                The timbre of the sounds we hear in the real world, are composed by unique combinations of thousands of
-                single frequencies. For this reason, the combination of the only three voices of the users (including
-                the capabilities of the phone speakers) could result in a poor sound design. Furthermore, additive
-                synthesis starts to create interesting sounds by combining dozens of harmonics.
-                The Max/MSP patch runs a more complex additive synthesis combining frequencies that create a soundscape
-                that matches with the sound emitted by the phones. The level of the harmonics is defined by the
-                variations of the measures detected by all the users. Considering the large number of inputs and outputs
-                to manage, I used a Wekinator machine learning model to modify the parameters according to a predefined
-                set of timbres.
+            <li>Every client sends through web-socket in OSC format the values of the other frequencies that the server
+                redirects as UDP message to the Max/MSP patch.
+                I decided to add the Max/MSP program because the timbre of the sounds we hear in the real world, are
+                composed by unique combinations of thousands of single frequencies. For this reason, the combination of
+                the only three voices of the users could result in a poor sound design.
+                <br><br>
+                The Max/MSP patch contributes to enrich the process of additive synthesis activated by the phones. The
+                level of the harmonics is defined by the variations of the measures detected by all the users.
+                Considering the large number of inputs and outputs to manage, I used a Wekinator machine learning model
+                to modify the parameters according to a predefined set of timbres.
             </li>
         </ol>
+        <div id="image-sequence">
+            <figure>
+                <img class="sequenceImg" src="images/wcc-1.jpg">
+                <figcaption>Fig.1</figcaption>
+            </figure>
+            <figure>
+                <img class="sequenceImg" src="images/wcc-2.png">
+                <figcaption>Fig.2</figcaption>
+            </figure>
+            <figure>
+                <img class="sequenceImg" src="images/wcc-3.png">
+                <figcaption>Fig.3</figcaption>
+            </figure>
+            <!-- <img class="sequenceImg" src="images/wcc-1.jpg">
+            <img class="sequenceImg" src="images/wcc-2.png">
+            <img class="sequenceImg" src="images/wcc-3.png"> -->
+        </div>
+
 
         <h2>Technical Implementation</h2>
         <p>The project relies on a complex system of inter-connected software, composed by:
-            -	A NodeJS server (app.js):
-            -	A client for the user phones (webpd.html) running a p5 sketch (sketch_webpd.js) and a Pure Data patch converted in AssemblyScript (patch.wasm) through the WebPd  compiler :
-            -	A client for the projection (mirror.html) running a p5 sketch (sketch_webpd.js):
-            -	A JavaScript software (bridge.js) that redirects the web-socket messages sent from the server to Max/MSP as udp messages:
-            -	A Max/MSP patch:
-            -	A Wekinator model.
-            </p>
-            <p>The server app.js organises the connections between the mobile clients and the specific projection where the QR code has been scanned. To do this, every QR code is assigned to a specific html page that runs on separate browser windows. In order to differentiate every mobile client and projection, I used a system of parameters’ passing through URL. This solution provided modularity to the code, allowing a varying number of users and projections by using a single JavaScript code. For example, the projection requires the parameter called id (i.e. https://192.168.1.117:4040/mirror.html?id=0) as well as the mobile users requires the parameter of mirror (i.e. https://192.168.1.117:4040/webpd.html?mirror=0).
+            - A NodeJS server (app.js),
+            - A client for the user phones (webpd.html) running a p5 sketch (sketch_webpd.js) and a Pure Data patch
+            converted in AssemblyScript (patch.wasm) through the <a href="https://github.com/sebpiq/WebPd">WebPd</a>
+            compiler,
+            - A client for the projection (mirror.html) running a p5 sketch (sketch_webpd.js),
+            - A Max/MSP patch,
+            - A Wekinator model.
+        </p>
+        <p>The server app.js organises the connections between the mobile clients and the specific projection where the
+            QR code has been scanned. To do this, every QR code is assigned to a specific html page that runs on
+            separate browser windows. In order to differentiate every mobile client and projection, I used a system of
+            parameters’ passing through URL. This solution provided modularity to the code, allowing a varying number of
+            users and projections by using a single JavaScript code. For example, the projection requires the parameter
+            called id (i.e. https://192.168.1.117:4040/mirror.html?id=0) as well as the mobile users requires the
+            parameter of mirror (i.e. https://192.168.1.117:4040/webpd.html?mirror=0).
+        </p>
 
-                The mirror also takes the event of socket connection to define the status of the connection with a client. In this way, when a client is connected, the QR code disappears and is replaced by the wavelength drawn with the incoming data received from the assigned client.
-                
-                Finally, I decided to use a Pure Data patch to emit sounds, because it turned out that on iOS the simultaneous use of the p5.Oscillator and the p5.AudioIn, produces sound glitches. This solution allowed me to use p5 for the input and the analysis of sound, while Pure Data for the output.
-                
-                </p>
+        <p> The mirror also takes the event of socket connection to define the status of the connection with a client.
+            In this way, when a client is connected, the QR code disappears and is replaced by the wavelength drawn with
+            the incoming data received from the assigned client.
+        </p>
+        <p> Finally, I decided to use a Pure Data patch to emit sounds, because it turned out that on iOS the
+            simultaneous use of the p5.Oscillator and the p5.AudioIn, produces sound glitches. This solution allowed me
+            to use p5 for the input and the analysis of sound, while Pure Data for the output.
+        </p>
 
         <h2>Reflection and Future Development</h2>
-
-        <p>The finalisation of the project has been challenged by many technical issues. Considering the experience in sound design using p5 that I had for the realisation of the WCC1 final project, I expected less difficulties. Otherwise, the use of mobile phones has raised a large number of new and unexpected problems. Furthermore, Android and iOS have different results. Also, different versions of the same OS behave differently.
-
-            The limitation in my network setup required a significant reduction of the amount of information sent through socket io as well as the number of devices implied. Finally, the time spent in trying solutions for the optimisation of the sound and the reduced resolution of data shared between devices, occurred in a simpler visual development. For this reason, in the next iterations of design cycles I will improve the graphic output.
-            
-            However, the development of the project has been very challenging and urged me to research solutions and to learn interesting new technologies. Finally, I think that this first test of the measurement of the proximity through sound analysis has been successful. For this reason, I will continue to develop this technology through further applications.
-            </p>
+        <p>
+            The finalisation of the project has been challenged by many technical issues. Considering the experience in
+            sound design using p5 that I had for the realisation of the WCC1 final project, I expected less
+            difficulties. Otherwise, the use of mobile phones has raised a large number of new and unexpected problems.
+            Furthermore, Android and iOS have different results. Also, different versions of the same OS behave
+            differently.
+        </p>
+        <p> The limitation in my network setup required a significant reduction of the amount of information sent
+            through socket io as well as the number of devices implied. Finally, the time spent in trying solutions for
+            the optimisation of the sound and the reduced resolution of data shared between devices, occurred in a
+            simpler visual development. For this reason, in the next iterations of design cycles I will improve the
+            graphic output.
+        </p>
+        <p>
+            However, the development of the project has been very challenging and urged me to research solutions and to
+            learn interesting new technologies. Finally, I think that this first test of the measurement of the
+            proximity through sound analysis has been successful. For this reason, I will continue to develop this
+            technology through further applications.</p>
         <h2>References</h2>
-        <p>Dourish, P. (2001). Where the action is: The foundations of embodied interaction. MIT.
-            Farnell, A. (2010). Designing sound. MIT Press. https://ebookcentral.proquest.com/lib/goldsmiths/detail.action?docID=3339445
-            Haraway, D. (1988). Situated Knowledges: The Science Question in Feminism and the Privilege of Partial Perspective. Feminist Studies, 14(3), 575–599. https://doi.org/10.2307/3178066
-            Noë, A. (2006). Action in perception. MIT Press.
-            Puckette, M. (2007). The theory and technique of electronic music. World Scientific.
-            Voegelin, S. (2010). Listening to noise and silence towards a philosophy of sound art. Continuum.
-            
-            </p>
+        <p>Dourish, P. (2001). Where the action is: The foundations of embodied interaction. MIT.</p>
+        <p>Farnell, A. (2010). Designing sound. MIT Press.</p>
+        <p>Haraway, D. (1988). Situated Knowledges: The Science Question in Feminism and the Privilege of Partial
+            Perspective. Feminist Studies, 14(3), 575–599.</p>
+        <p>Noë, A. (2006). Action in perception. MIT Press.</p>
+        <p>Puckette, M. (2007). The theory and technique of electronic music. World Scientific.</p>
+        <p>Voegelin, S. (2010). Listening to noise and silence towards a philosophy of sound art. Continuum.</p>
+
+
 
         <a href="https://samuelealbani.github.io/il_suono_del_tempo/">View Online</a>
-    </header>
-
-    <main>
         <section>
             <h3>Video</h3>
             <div class="responsive-video">
-                <iframe src="https://player.vimeo.com/video/789471839?h=069e9a4a47" width="640" height="360"
+                <iframe src="https://player.vimeo.com/video/822827063?h=ee02c5229f" width="640" height="360"
                     frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>
+                    <a href="https://vimeo.com/822827063">Playing the distance</a> from <a
+                        href="https://vimeo.com/user15847941">Samuele Albani</a> on <a href="https://vimeo.com">Vimeo
+                    </a>.
+                </p>
+
             </div>
-            <p>
+            <!--  <p>
                 <a href="https://vimeo.com/789471839">Il suono del tempo</a> from <a
                     href="https://vimeo.com/user15847941">Samuele Albani</a> on <a href="https://vimeo.com">Vimeo</a>.
-            </p>
+            </p> -->
 
         </section>
         <section>
-            <h3>Images</h3>
-            <img id="striped-image" src="../assets/images/il_suono_del_tempo.jpg" />
+            <div>
+                <h3>Images</h3>
+                <img id="striped-image" src="../assets/images/il_suono_del_tempo.jpg" />
+            </div>
+
         </section>
 
     </main>
