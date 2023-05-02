@@ -151,13 +151,30 @@
 
         <h2>Technical Implementation</h2>
         <p>The project relies on a complex system of inter-connected software, composed by:
-            - A NodeJS server (app.js),
-            - A client for the user phones (webpd.html) running a p5 sketch (sketch_webpd.js) and a Pure Data patch
-            converted in AssemblyScript (patch.wasm) through the <a href="https://github.com/sebpiq/WebPd">WebPd</a>
-            compiler,
-            - A client for the projection (mirror.html) running a p5 sketch (sketch_webpd.js),
-            - A Max/MSP patch,
-            - A Wekinator model.
+            <ul>
+                <li>a NodeJS server (<a
+                        href="https://github.com/samuelealbani/playing-the-distance/blob/main/app.js">app.js</a>),</li>
+                <li>a client for the user phones (<a
+                        href="https://github.com/samuelealbani/playing-the-distance/blob/main/public/webpd.html">webpd.html</a>)
+                    running a p5 sketch (<a
+                        href="https://github.com/samuelealbani/playing-the-distance/blob/main/public/javascript/sketch_webpd.js">sketch_webpd.js</a>)
+                    and a Pure Data patch
+                    converted in AssemblyScript (patch.wasm) through the <a
+                        href="https://github.com/sebpiq/WebPd">WebPd</a>
+                    compiler,</li>
+                <li>a client for the projection (<a
+                        href="https://github.com/samuelealbani/playing-the-distance/blob/main/public/mirror.html">mirror.html</a>)
+                    running a p5 sketch (<a
+                        href="https://github.com/samuelealbani/playing-the-distance/blob/main/public/javascript/sketch_mirror.js">sketch_mirror.js</a>),
+                </li>
+                <li>a Max/MSP patch,</li>
+                <li>a Wekinator model.</li>
+            </ul>
+
+
+
+
+
         </p>
         <p>The server app.js organises the connections between the mobile clients and the specific projection where the
             QR code has been scanned. To do this, every QR code is assigned to a specific html page that runs on
